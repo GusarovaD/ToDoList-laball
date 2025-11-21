@@ -16,7 +16,7 @@ public class TodoManager {
             scanner.nextLine();
 
             switch (choice) {
-
+                case 1 -> addTask();
                 case 2 -> viewTasks();
                 case 3 -> deleteTask();
                 case 4 -> {
@@ -37,7 +37,12 @@ public class TodoManager {
         System.out.print("Выберите действие: ");
     }
 
-
+    private static void addTask() {
+        System.out.print("Введите задачу: ");
+        String task = scanner.nextLine();
+        tasks.add(task);
+        System.out.println("Задача добавлена!");
+    }
 
     private static void viewTasks() {
         if (tasks.isEmpty()) {
